@@ -1,7 +1,7 @@
 const form = document.getElementById("loginForm");
 const errorMsg = document.getElementById("errorMsg");
 
-// CHANGE THIS LOGIN DETAILS
+// CHANGE LOGIN DETAILS HERE
 const correctUsername = "admin";
 const correctPassword = "1234";
 
