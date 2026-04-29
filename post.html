@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOGIN PROTECTION -->
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="animated-bg"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="navbar">
+    <div class="logo">⚡ YourName</div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="#" id="logoutBtn" class="nav-link logout">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section post-page">
+    <h2 id="post-title" class="section-title"></h2>
+    <p id="post-date" class="subtitle"></p>
+
+    <div id="post-content" class="post-content"></div>
+
+    <a href="blog.html" class="btn outline back-btn">⬅ Back to Blog</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name</p>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
