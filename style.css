@@ -1,0 +1,521 @@
+/* =========================
+   GEN-Z MODERN PORTFOLIO CSS
+   (Premium Background + Animations)
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #05050a;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* =========================
+   PREMIUM BACKGROUND (Blobs + Grain)
+   ========================= */
+
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  background: #05050a;
+}
+
+.animated-bg::before,
+.animated-bg::after {
+  content: "";
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.45;
+  animation: blobMove 14s ease-in-out infinite alternate;
+}
+
+.animated-bg::before {
+  background: radial-gradient(circle, #00e5ff, transparent 70%);
+  top: -220px;
+  left: -180px;
+}
+
+.animated-bg::after {
+  background: radial-gradient(circle, #ff00ff, transparent 70%);
+  bottom: -220px;
+  right: -180px;
+  animation-delay: 4s;
+}
+
+.animated-bg .blob {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  filter: blur(160px);
+  opacity: 0.35;
+  background: radial-gradient(circle, #00ff99, transparent 70%);
+  top: 35%;
+  left: 40%;
+  animation: blobMove2 16s ease-in-out infinite alternate;
+}
+
+/* Grain Noise Overlay (makes it look expensive) */
+.animated-bg .grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+@keyframes blobMove {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(140px, 90px) scale(1.25);
+  }
+}
+
+@keyframes blobMove2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-120px, -80px) scale(1.2);
+  }
+}
+
+/* =========================
+   PARTICLES CANVAS
+   ========================= */
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+/* =========================
+   CURSOR GLOW
+   ========================= */
+
+.cursor-glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.25), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(40px);
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: white;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+}
+
+.logout {
+  color: #ff4d6d;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+  text-align: center;
+  padding: 120px 20px 90px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.glow-text {
+  background: linear-gradient(90deg, #00e5ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: rgba(0, 229, 255, 0.15);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.btn.outline {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn.outline:hover {
+  box-shadow: 0 0 18px rgba(255, 0, 255, 0.4);
+}
+
+.btn.full {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.section {
+  padding: 70px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 30px;
+}
+
+/* =========================
+   GRID
+   ========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(10, 10, 18, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  transition: 0.35s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border: 1px solid rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.15);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.card p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =========================
+   SKILLS
+   ========================= */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skills span {
+  padding: 10px 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: 0.3s;
+}
+
+.skills span:hover {
+  transform: scale(1.08);
+  border: 1px solid rgba(255, 0, 255, 0.5);
+}
+
+/* =========================
+   CONTACT BOX
+   ========================= */
+
+.contact-box {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(10, 10, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.contact-box a {
+  color: #00e5ff;
+  text-decoration: none;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   BLOG POST PAGE
+   ========================= */
+
+.post-page {
+  text-align: center;
+}
+
+.post-content {
+  text-align: left;
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(10, 10, 18, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  line-height: 1.8;
+}
+
+.post-content ul {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 20px;
+  z-index: 5;
+}
+
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #00e5ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-subtitle {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+.login-box {
+  margin-top: 30px;
+  background: rgba(10, 10, 18, 0.8);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.12);
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  outline: none;
+  font-size: 1rem;
+}
+
+.login-box input:focus {
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+.error {
+  margin-top: 15px;
+  color: #ff4d6d;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.fade-in.delay {
+  animation-delay: 0.4s;
+}
+
+.fade-in.delay2 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 18px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+}
