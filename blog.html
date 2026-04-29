@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Your Name</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOGIN PROTECTION -->
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="animated-bg"></div>
+  <canvas id="particles"></canvas>
+
+  <header class="navbar">
+    <div class="logo">⚡ YourName</div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="#" id="logoutBtn" class="nav-link logout">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h2 class="section-title reveal">Blog</h2>
+    <p class="subtitle reveal">My thoughts on coding, life & design.</p>
+
+    <div id="blog-list" class="grid"></div>
+  </section>
+
+  <footer>
+    <p>© 2026 Your Name</p>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
